@@ -11,6 +11,6 @@ print("<br>");
 print("Summen er $sum <br>");
 print("Differansen er $differanse (absolutt verdi)");
 
-
 ?>
+
 
