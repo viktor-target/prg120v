@@ -9,7 +9,8 @@ print("Tall 1 er $tall1 <br>");
 print("Tall 2 er $tall2 <br>");
 print("<br>");
 print("Summen er $sum <br>");
-print("Differansen er $differanse");
+print("Differansen er $differanse (absolutt verdi)");
 
 
 ?>
+
