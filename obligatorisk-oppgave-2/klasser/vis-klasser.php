@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    include("..\db-tilkobling.php");
+    include("../db-tilkobling.php");
 
     $sqlSetning = "SELECT * FROM klasse;";
     $sqlResultat = mysqli_query($db, $sqlSetning) or die("Ikke mulig å hente data fra databasen.");
