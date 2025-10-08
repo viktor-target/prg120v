@@ -7,6 +7,7 @@
     <title>Vis alle klasser</title>
     <style>
         table {
+            border-collapse: collapse;
             border: 1px solid black;
         }
     </style>
