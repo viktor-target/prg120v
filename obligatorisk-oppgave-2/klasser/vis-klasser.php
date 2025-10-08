@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vis alle klasser</title>
     <style>
-        table {
+        table,
+        th,
+        td {
             border-collapse: collapse;
-            border: 1px solid black;
+            border: 1px;
         }
     </style>
 </head>
