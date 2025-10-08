@@ -11,6 +11,7 @@
         td {
             border-collapse: collapse;
             border: 1px solid black;
+            padding: 8px 8px;
         }
     </style>
 </head>
