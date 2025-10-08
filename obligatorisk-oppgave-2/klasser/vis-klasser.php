@@ -10,7 +10,7 @@
         th,
         td {
             border-collapse: collapse;
-            border: 1px;
+            border: 1px solid black;
         }
     </style>
 </head>
