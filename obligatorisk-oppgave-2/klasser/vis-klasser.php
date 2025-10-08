@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vis alle klasser</title>
-    <link rel="stylesheet" href="obligatorisk-oppgave-2\style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
     <?php
-    include("obligatorisk-oppgave-2\db-tilkobling.php");
+    include("..\db-tilkobling.php");
 
     $sqlSetning = "SELECT * FROM klasse;";
     $sqlResultat = mysqli_query($db, $sqlSetning) or die("Ikke mulig å hente data fra databasen.");
