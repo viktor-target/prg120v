@@ -10,11 +10,11 @@
 <body>
     <h1>Registrer klasse</h1>
     <form method="post" id="registrerKlasse" name="registrerKlasse">
-        Klassekode<input type="text" id="klassekode" name="klassekode"><br>
-        Klassenavn<input type="text" id="klassenavn" name="klassenavn"><br>
-        Studiumkode<input type="text" id="studiumkode" name="studiumkode"><br>
+        Klassekode <input type="text" id="klassekode" name="klassekode"><br>
+        Klassenavn <input type="text" id="klassenavn" name="klassenavn"><br>
+        Studiumkode <input type="text" id="studiumkode" name="studiumkode"><br>
         <input type="submit" value="Registrer klasse" id="registrerKlasseKnapp" name="registrerKlasseKnapp">
-        <input type="reset" value="Nullstill" id="nullstillKnapp" name="nullstillKnapp">
+        <input type="reset" value="Nullstill" id="nullstillKnapp" name="nullstillKnapp"><br>
     </form>
 
     <?php
@@ -44,7 +44,10 @@
                 $sqlSetning = "INSERT INTO klasse VALUES('$klassekode', '$klassenavn', '$studiumkode');";
                 mysqli_query($db, $sqlSetning) or die("Ikke mulig å registrere data i databasen.");
 
-                echo "Følgende klasse er nå registrert: $klassekode $klassenavn $studiumkode.";
+                echo "Følgende klasse er nå registrert:<br>
+                $klassekode<br>
+                $klassenavn<br>
+                $studiumkode.";
             }
         }
     }
