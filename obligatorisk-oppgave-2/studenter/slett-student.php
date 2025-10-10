@@ -35,7 +35,7 @@
             $sqlResultat = mysqli_query($db, $sqlSetning)
                 or die("Ikke mulig å hente data fra databasen.<br>");
             $rad = mysqli_fetch_array($sqlResultat);
-            $fornavn = $rad["fornavn"];
+            $fornavn = $rad["fornavn"]; /* FIKS ERROR NÅR MAN IKKE VELGER NAVN I LISTEBOKSEN */
             $etternavn = $rad["etternavn"];
 
             $sqlSetning = "DELETE FROM student WHERE brukernavn = '$brukernavn';";
