@@ -17,7 +17,7 @@
             include("../php-funksjoner.php");
             lagStudentDropdown();
             ?>
-        </select><br>
+        </select><br><br>
         <input type="submit" value="Slett student" id="slettStudentKnapp" name="slettStudentKnapp">
         <input type="reset" value="Nullstill" name="nullstillKnapp" id="nullstillKnapp">
     </form><br>
@@ -31,7 +31,7 @@
 
         } else {
             include("../db-tilkobling.php");
-            $sqlSetning = "SELECT FROM student WHERE brukernavn = '$brukernavn'";
+            $sqlSetning = "SELECT * FROM student WHERE brukernavn = '$brukernavn'";
             $sqlResultat = mysqli_query($db, $sqlSetning)
                 or die("Ikke mulig å hente data fra databasen.<br>");
             $rad = mysqli_fetch_array($sqlResultat);
