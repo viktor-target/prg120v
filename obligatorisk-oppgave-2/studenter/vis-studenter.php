@@ -34,7 +34,11 @@
             $etternavn = $rad["etternavn"];
             $klassekode = $rad["klassekode"];
 
-            echo "<tr><td>$brukernavn</td><td>$fornavn</td><td>$etternavn</td><td>$klassekode</td><tr>";
+            echo "<tr>
+            <td>$brukernavn</td>
+            <td>$fornavn</td>
+            <td>$etternavn</td>
+            <td>$klassekode</td><tr>";
         }
         ?>
     </table>
