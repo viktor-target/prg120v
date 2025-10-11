@@ -18,7 +18,7 @@
             include("../php-funksjoner.php");
             lagKlassekodeDropdown();
             ?>
-        </select>
+        </select><br>
         <input type="submit" value="Registrer klasse" id="registrerStudentKnapp" name="registrerStudentKnapp">
         <input type="reset" value="Nullstill" id="nullstillKnapp" name="nullstillKnapp">
     </form><br>
@@ -57,8 +57,8 @@
                 echo "Følgende student er nå registrert:<br>
                 $brukernavn<br>
                 $fornavn<br>
-                $etternavn.<br>
-                $klassekode.<br>";
+                $etternavn<br>
+                $klassekode<br>";
             }
         }
     }
