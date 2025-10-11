@@ -10,7 +10,7 @@
 <body>
     <script src="../js-funksjoner.js"></script>
     <h1>Slett student</h1>
-    <form method="post" id="slettStudentSkjema" name="slettStudentSkjema" onsubmit="return slettStudentVarsel()">
+    <form method="post" id="slettStudentSkjema" name="slettStudentSkjema" onsubmit="return slettStudentVarsel()"> <!-- sjekk at onSubmit faktisk gjør det den skal -->
         <select name="brukernavn" id="brukernavn">
             <option>--Velg student som skal slettes--</option>
             <?php
@@ -31,7 +31,7 @@
 
         } else {
             include("../db-tilkobling.php");
-            $sqlSetning = "SELECT * FROM student WHERE brukernavn = '$brukernavn'";
+            $sqlSetning = "SELECT * FROM student WHERE brukernavn = '$brukernavn';";
             $sqlResultat = mysqli_query($db, $sqlSetning)
                 or die("Ikke mulig å hente data fra databasen.<br>");
             $rad = mysqli_fetch_array($sqlResultat);
