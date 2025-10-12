@@ -30,17 +30,19 @@
         $etternavn = $_POST["etternavn"];
         $klassekode = $_POST["klassekode"];
 
-        if (!$brukernavn) {
-            echo "Brukernavn er ikke fylt ut.<br>";
-        }
-        if (!$fornavn) {
-            echo "Fornavn er ikke fylt ut.<br>";
-        }
-        if (!$etternavn) {
-            echo "Etternavn er ikke fylt ut.<br>";
-        }
-        if (!$klassekode) {
-            echo "Klassekode er ikke valgt.<br>";
+        if (!$brukernavn || !$fornavn || !$etternavn || !$klassekode) {
+            if (!$brukernavn) {
+                echo "Brukernavn er ikke fylt ut.<br>";
+            }
+            if (!$fornavn) {
+                echo "Fornavn er ikke fylt ut.<br>";
+            }
+            if (!$etternavn) {
+                echo "Etternavn er ikke fylt ut.<br>";
+            }
+            if (!$klassekode) {
+                echo "Klassekode er ikke valgt.<br>";
+            }
         } else {
             include("../db-tilkobling.php");
 
@@ -56,12 +58,6 @@
 
                 echo "Følgende student er nå registrert:<br>
                 <table>
-                    <tr>
-                        <th>Brukernavn</th>
-                        <th>Fornavn</th>
-                        <th>Etternavn</th>
-                        <th>Klassekode</th>
-                    </tr>
                     <tr>
                         <td>$brukernavn</td>
                         <td>$fornavn</td>
