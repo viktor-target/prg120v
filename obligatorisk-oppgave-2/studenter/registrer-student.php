@@ -13,7 +13,7 @@
         Brukernavn <input type="text" id="brukernavn" name="brukernavn"><br>
         Fornavn <input type="text" id="fornavn" name="fornavn"><br>
         Etternavn <input type="text" id="etternavn" name="etternavn"><br>
-        <select name="klassekode" id="klassekode">
+        Klassekode <select name="klassekode" id="klassekode">
             <?php
             include("../php-funksjoner.php");
             lagKlassekodeDropdown();
