@@ -12,7 +12,7 @@
     <script src="obligatorisk-oppgave-2\js-funksjoner.js"></script>
     <form method="post" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return slettStudentVarsel();">
         <select name="brukernavn" id="brukernavn">
-            <option>--Velg student som skal slettes--</option>
+            <option value="">--Velg student som skal slettes--</option>
             <?php
             include("php-funksjoner.php");
             lagStudentDropdown();
@@ -21,7 +21,6 @@
         <input type="submit" value="Slett student" id="slettStudentKnapp" name="slettStudentKnapp">
         <input type="reset" value="Nullstill" name="nullstillKnapp" id="nullstillKnapp">
     </form><br>
-    <!-- sjekk at onSubmit faktisk gjør det den skal -->
     <?php
     if (isset($_POST["slettStudentKnapp"])) {
         $brukernavn = $_POST["brukernavn"];
@@ -36,7 +35,6 @@
             $rad = mysqli_fetch_array($sqlResultat);
             $fornavn = $rad["fornavn"]; /* FIKS ERROR NÅR MAN IKKE VELGER BRUKERNAVN I LISTEBOKSEN */
             $etternavn = $rad["etternavn"];
-
             $sqlSetning = "DELETE FROM student WHERE brukernavn = '$brukernavn';";
             mysqli_query($db, $sqlSetning)
                 or die("Ikke mulig å slette data i databasen.<br>");
