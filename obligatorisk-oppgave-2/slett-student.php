@@ -26,7 +26,7 @@
         $brukernavn = $_POST["brukernavn"];
 
         if (!$brukernavn) {
-            echo "Brukernavn er ikke valgt.<br>";
+            echo "Ingen student er valgt.<br>";
         } else {
             include("db-tilkobling.php");
             $sqlSetning = "SELECT * FROM student WHERE brukernavn = '$brukernavn';";

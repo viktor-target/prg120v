@@ -14,7 +14,7 @@
         Fornavn <input type="text" id="fornavn" name="fornavn"><br>
         Etternavn <input type="text" id="etternavn" name="etternavn"><br>
         Klassekode <select name="klassekode" id="klassekode">
-            <option>--Velg klassekode--</option>
+            <option value="">--Velg klassekode--</option>
             <?php
             include("php-funksjoner.php");
             lagKlassekodeDropdown();
