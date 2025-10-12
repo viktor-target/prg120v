@@ -27,7 +27,7 @@ function lagKlassekodeDropdown()
         or die("Ikke mulig å hente data fra databasen.<br>");
 
     while ($klassekode = mysqli_fetch_column($sqlResultat)) {
-        echo "<option value='$klassekode>$klassekode</option>";
+        echo "<option value='$klassekode'>$klassekode</option>";
     }
 }
 
