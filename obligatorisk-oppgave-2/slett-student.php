@@ -9,6 +9,7 @@
 
 <body>
     <h1>Slett student</h1>
+    <script src="obligatorisk-oppgave-2\js-funksjoner.js"></script>
     <form method="post" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return slettStudentVarsel();">
         <select name="brukernavn" id="brukernavn">
             <option>--Velg student som skal slettes--</option>
@@ -20,7 +21,6 @@
         <input type="submit" value="Slett student" id="slettStudentKnapp" name="slettStudentKnapp">
         <input type="reset" value="Nullstill" name="nullstillKnapp" id="nullstillKnapp">
     </form><br>
-    <script src="js-funksjoner.js"></script>
     <!-- sjekk at onSubmit faktisk gjør det den skal -->
     <?php
     if (isset($_POST["slettStudentKnapp"])) {
@@ -34,7 +34,7 @@
             $sqlResultat = mysqli_query($db, $sqlSetning)
                 or die("Ikke mulig å hente data fra databasen.<br>");
             $rad = mysqli_fetch_array($sqlResultat);
-            $fornavn = $rad["fornavn"]; /* FIKS ERROR NÅR MAN IKKE VELGER NAVN I LISTEBOKSEN */
+            $fornavn = $rad["fornavn"]; /* FIKS ERROR NÅR MAN IKKE VELGER BRUKERNAVN I LISTEBOKSEN */
             $etternavn = $rad["etternavn"];
 
             $sqlSetning = "DELETE FROM student WHERE brukernavn = '$brukernavn';";
