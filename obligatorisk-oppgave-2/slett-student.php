@@ -20,7 +20,7 @@
         <input type="submit" value="Slett student" id="slettStudentKnapp" name="slettStudentKnapp">
         <input type="reset" value="Nullstill" name="nullstillKnapp" id="nullstillKnapp">
     </form><br>
-    <script src="obligatorisk-oppgave-2\js-funksjoner.js"></script>
+    <script src="js-funksjoner.js"></script>
     <!-- sjekk at onSubmit faktisk gjør det den skal -->
     <?php
     if (isset($_POST["slettStudentKnapp"])) {
