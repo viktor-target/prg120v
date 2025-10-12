@@ -14,6 +14,7 @@
         Fornavn <input type="text" id="fornavn" name="fornavn"><br>
         Etternavn <input type="text" id="etternavn" name="etternavn"><br>
         Klassekode <select name="klassekode" id="klassekode">
+            <option disabled>--Velg klassekode--</option>
             <?php
             include("../php-funksjoner.php");
             lagKlassekodeDropdown();
@@ -53,7 +54,7 @@
             if ($antallRader != 0) {
                 echo "Brukernavnet er registrert fra før.<br>";
             } else {
-                $sqlSetning = "INSERT INTO student VALUES('$brukernavn', $fornavn, '$etternavn', '$klassekode');";
+                $sqlSetning = "INSERT INTO student VALUES('$brukernavn', '$fornavn', '$etternavn', '$klassekode');";
                 mysqli_query($db, $sqlSetning) or die("Ikke mulig å registrere data i databasen.<br>");
 
                 echo "Følgende student er nå registrert: $fornavn $etternavn.";
