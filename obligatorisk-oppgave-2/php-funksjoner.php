@@ -25,11 +25,11 @@ function lagKlassekodeDropdown()
     $sqlSetning = "SELECT klassekode FROM klasse;";
     $sqlResultat = mysqli_query($db, $sqlSetning)
         or die("Ikke mulig å hente data fra databasen.<br>");
-    $antallRader = mysqli_num_rows($sqlResultat);
+    $antallKolonner = mysqli_num_fields($sqlResultat);
 
-    for ($r = 0; $r < $antallRader; $r++) {
-        $rad = mysqli_fetch_array($sqlResultat);
-        $klassekode = $rad[$r];
+    for ($k = 0; $k < $antallKolonner; $k++) {
+        $kolonne = mysqli_fetch_array($sqlResultat);
+        $klassekode = $kolonne[$k];
 
         echo "<option value='$klassekode'>$klassekode</option>";
     }
