@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registrer klasse</title>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
     <form method="post" id="registrerKlasse" name="registrerKlasse">
         Klassekode <input type="text" id="klassekode" name="klassekode"><br>
         Klassenavn <input type="text" id="klassenavn" name="klassenavn"><br>
-        Studiumkode <input type="text" id="studiumkode" name="studiumkode"><br>
+        Studiumkode <input type="text" id="studiumkode" name="studiumkode"><br><br>
         <input type="submit" value="Registrer klasse" id="registrerKlasseKnapp" name="registrerKlasseKnapp">
         <input type="reset" value="Nullstill" id="nullstillKnapp" name="nullstillKnapp">
     </form><br>

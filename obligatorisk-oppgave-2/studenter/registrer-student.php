@@ -18,7 +18,7 @@
             include("../php-funksjoner.php");
             lagKlassekodeDropdown();
             ?>
-        </select><br>
+        </select><br><br>
         <input type="submit" value="Registrer klasse" id="registrerStudentKnapp" name="registrerStudentKnapp">
         <input type="reset" value="Nullstill" id="nullstillKnapp" name="nullstillKnapp">
     </form><br>
@@ -55,10 +55,20 @@
                 mysqli_query($db, $sqlSetning) or die("Ikke mulig å registrere data i databasen.<br>");
 
                 echo "Følgende student er nå registrert:<br>
-                $brukernavn<br>
-                $fornavn<br>
-                $etternavn<br>
-                $klassekode<br>";
+                <table>
+                    <tr>
+                        <th>Brukernavn</th>
+                        <th>Fornavn</th>
+                        <th>Etternavn</th>
+                        <th>Klassekode</th>
+                    </tr>
+                    <tr>
+                        <td>$brukernavn</td>
+                        <td>$fornavn</td>
+                        <td>$etternavn</td>
+                        <td>$klassekode</td>
+                    </tr>
+                </table>";
             }
         }
     }

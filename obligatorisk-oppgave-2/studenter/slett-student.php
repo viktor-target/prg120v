@@ -12,7 +12,8 @@
     <h1>Slett student</h1>
     <form method="post" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return slettStudentVarsel()">
         <!-- sjekk at onSubmit faktisk gjør det den skal -->
-        Velg student som skal slettes <select name="brukernavn" id="brukernavn">
+        <select name="brukernavn" id="brukernavn">
+            <option>--Velg student som skal slettes--</option>
             <?php
             include("../php-funksjoner.php");
             lagStudentDropdown();
