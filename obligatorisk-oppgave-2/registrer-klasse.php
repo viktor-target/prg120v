@@ -32,7 +32,7 @@
         if (!$studiumkode) {
             echo "Studiumkode er ikke fylt ut.<br>";
         } else {
-            include("../db-tilkobling.php");
+            include("db-tilkobling.php");
 
             $sqlSetning = "SELECT * FROM klasse WHERE klassekode = '$klassekode';";
             $sqlResultat = mysqli_query($db, $sqlSetning) or die("Ikke mulig å hente data fra databasen.");

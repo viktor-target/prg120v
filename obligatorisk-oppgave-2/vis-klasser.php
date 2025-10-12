@@ -4,41 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vis alle studenter</title>
+    <title>Vis alle klasser</title>
     <link rel="stylesheet" href="obligatorisk-oppgave-2\style.css">
 </head>
 
 <body>
     <?php
-    include("../db-tilkobling.php");
+    include("db-tilkobling.php");
 
-    $sqlSetning = "SELECT * FROM student;";
+    $sqlSetning = "SELECT * FROM klasse;";
     $sqlResultat = mysqli_query($db, $sqlSetning) or die("Ikke mulig å hente data fra databasen.");
     $antallRader = mysqli_num_rows($sqlResultat);
     ?>
 
-    <h1>Registrerte studenter</h1>
+    <h1>Registrerte klasser</h1>
     <table>
         <tr>
-            <th>Brukernavn</th>
-            <th>Fornavn</th>
-            <th>Etternavn</th>
             <th>Klassekode</th>
+            <th>Klassenavn</th>
+            <th>Studiumkode</th>
         </tr>
 
         <?php
         for ($r = 0; $r < $antallRader; $r++) {
             $rad = mysqli_fetch_array($sqlResultat);
-            $brukernavn = $rad["brukernavn"];
-            $fornavn = $rad["fornavn"];
-            $etternavn = $rad["etternavn"];
             $klassekode = $rad["klassekode"];
+            $klassenavn = $rad["klassenavn"];
+            $studiumkode = $rad["studiumkode"];
 
-            echo "<tr>
-            <td>$brukernavn</td>
-            <td>$fornavn</td>
-            <td>$etternavn</td>
-            <td>$klassekode</td><tr>";
+            echo "<tr><td>$klassekode</td><td>$klassenavn</td><td>$studiumkode</td></tr>";
         }
         ?>
     </table>

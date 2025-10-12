@@ -14,9 +14,9 @@
         Fornavn <input type="text" id="fornavn" name="fornavn"><br>
         Etternavn <input type="text" id="etternavn" name="etternavn"><br>
         Klassekode <select name="klassekode" id="klassekode">
-            <option disabled>--Velg klassekode--</option>
+            <option>--Velg klassekode--</option>
             <?php
-            include("../php-funksjoner.php");
+            include("php-funksjoner.php");
             lagKlassekodeDropdown();
             ?>
         </select><br><br>
@@ -45,7 +45,7 @@
                 echo "Klassekode er ikke valgt.<br>";
             }
         } else {
-            include("../db-tilkobling.php");
+            include("db-tilkobling.php");
 
             $sqlSetning = "SELECT * FROM student WHERE brukernavn = '$brukernavn';";
             $sqlResultat = mysqli_query($db, $sqlSetning) or die("Ikke mulig å hente data fra databasen.");

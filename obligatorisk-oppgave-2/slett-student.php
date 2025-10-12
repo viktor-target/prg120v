@@ -8,14 +8,14 @@
 </head>
 
 <body>
-    <script src="../js-funksjoner.js"></script>
+    <script src="js-funksjoner.js"></script>
     <h1>Slett student</h1>
     <form method="post" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return slettStudentVarsel()">
         <!-- sjekk at onSubmit faktisk gjør det den skal -->
         <select name="brukernavn" id="brukernavn">
             <option>--Velg student som skal slettes--</option>
             <?php
-            include("../php-funksjoner.php");
+            include("php-funksjoner.php");
             lagStudentDropdown();
             ?>
         </select><br><br>
@@ -30,7 +30,7 @@
         if (!$brukernavn) {
             echo "Brukernavn er ikke valgt.<br>";
         } else {
-            include("../db-tilkobling.php");
+            include("db-tilkobling.php");
             $sqlSetning = "SELECT * FROM student WHERE brukernavn = '$brukernavn';";
             $sqlResultat = mysqli_query($db, $sqlSetning)
                 or die("Ikke mulig å hente data fra databasen.<br>");
