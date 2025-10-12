@@ -19,7 +19,7 @@
             lagKlassekodeDropdown();
             ?>
         </select><br><br>
-        <input type="submit" value="Registrer klasse" id="registrerStudentKnapp" name="registrerStudentKnapp">
+        <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp">
         <input type="reset" value="Nullstill" id="nullstillKnapp" name="nullstillKnapp">
     </form><br>
 
@@ -53,18 +53,10 @@
             if ($antallRader != 0) {
                 echo "Brukernavnet er registrert fra før.<br>";
             } else {
-                $sqlSetning = "INSERT INTO student VALUES('$brukernavn', '$fornavn', '$etternavn', '$klassekode');";
+                $sqlSetning = "INSERT INTO student VALUES('$brukernavn', $fornavn, '$etternavn', '$klassekode');";
                 mysqli_query($db, $sqlSetning) or die("Ikke mulig å registrere data i databasen.<br>");
 
-                echo "Følgende student er nå registrert:<br>
-                <table>
-                    <tr>
-                        <td>$brukernavn</td>
-                        <td>$fornavn</td>
-                        <td>$etternavn</td>
-                        <td>$klassekode</td>
-                    </tr>
-                </table>";
+                echo "Følgende student er nå registrert: $fornavn $etternavn.";
             }
         }
     }

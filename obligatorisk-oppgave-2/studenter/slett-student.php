@@ -29,7 +29,6 @@
 
         if (!$brukernavn) {
             echo "Brukernavn er ikke valgt.<br>";
-
         } else {
             include("../db-tilkobling.php");
             $sqlSetning = "SELECT * FROM student WHERE brukernavn = '$brukernavn';";

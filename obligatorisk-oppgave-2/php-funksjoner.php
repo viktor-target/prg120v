@@ -13,9 +13,8 @@ function lagStudentDropdown()
         $brukernavn = $rad["brukernavn"];
         $fornavn = $rad["fornavn"];
         $etternavn = $rad["etternavn"];
-        $klassekode = $rad["klassekode"];
 
-        echo "<option value='$brukernavn'>$fornavn $etternavn $klassekode</option>";
+        echo "<option value='$brukernavn'>$fornavn $etternavn</option>";
     }
 }
 
