@@ -10,7 +10,7 @@
 <body>
     <script src="js-funksjoner.js"></script>
     <h1>Slett student</h1>
-    <form method="post" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return slettStudentVarsel()">
+    <form method="post" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return slettStudentVarsel();">
         <!-- sjekk at onSubmit faktisk gjør det den skal -->
         <select name="brukernavn" id="brukernavn">
             <option>--Velg student som skal slettes--</option>

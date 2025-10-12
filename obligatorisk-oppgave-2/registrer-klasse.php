@@ -23,14 +23,16 @@
         $klassenavn = $_POST["klassenavn"];
         $studiumkode = $_POST["studiumkode"];
 
-        if (!$klassekode) {
-            echo "Klassekode er ikke fylt ut.<br>";
-        }
-        if (!$klassenavn) {
-            echo "Klassenavn er ikke fylt ut.<br>";
-        }
-        if (!$studiumkode) {
-            echo "Studiumkode er ikke fylt ut.<br>";
+        if (!$klassekode || !$klassenavn || !$studiumkode) {
+            if (!$klassekode) {
+                echo "Klassekode er ikke fylt ut.<br>";
+            }
+            if (!$klassenavn) {
+                echo "Klassenavn er ikke fylt ut.<br>";
+            }
+            if (!$studiumkode) {
+                echo "Studiumkode er ikke fylt ut.<br>";
+            }
         } else {
             include("db-tilkobling.php");
 
@@ -44,7 +46,7 @@
                 $sqlSetning = "INSERT INTO klasse VALUES('$klassekode', '$klassenavn', '$studiumkode');";
                 mysqli_query($db, $sqlSetning) or die("Ikke mulig å registrere data i databasen.<br>");
 
-                echo "Følgende klasse er nå registrert: $klassekode, $klassenavn, $studiumkode.<br>";
+                echo "Følgende klasse er nå registrert: $klassekode | $klassenavn | $studiumkode.<br>";
             }
         }
     }
