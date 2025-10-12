@@ -8,10 +8,8 @@
 </head>
 
 <body>
-    <script src="js-funksjoner.js"></script>
     <h1>Slett student</h1>
     <form method="post" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return slettStudentVarsel();">
-        <!-- sjekk at onSubmit faktisk gjør det den skal -->
         <select name="brukernavn" id="brukernavn">
             <option>--Velg student som skal slettes--</option>
             <?php
@@ -22,7 +20,8 @@
         <input type="submit" value="Slett student" id="slettStudentKnapp" name="slettStudentKnapp">
         <input type="reset" value="Nullstill" name="nullstillKnapp" id="nullstillKnapp">
     </form><br>
-
+    <script src="obligatorisk-oppgave-2\js-funksjoner.js"></script>
+    <!-- sjekk at onSubmit faktisk gjør det den skal -->
     <?php
     if (isset($_POST["slettStudentKnapp"])) {
         $brukernavn = $_POST["brukernavn"];
