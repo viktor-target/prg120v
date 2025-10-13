@@ -20,3 +20,5 @@ INSERT INTO klasse VALUES ('IT3', 'IT og ledelse 3. år', 'ITLED');
 INSERT INTO student VALUES ('gb', 'Geir', 'Bjarvin', 'IT1');
 INSERT INTO student VALUES ('mrj', 'Marius R.', 'Johannessen', 'IT1');
 INSERT INTO student VALUES ('tb', 'Tove', 'Bøe', 'IT2');
+
+INSERT INTO student VALUES ('vt', 'Viktor', 'Target', 'IT1');
