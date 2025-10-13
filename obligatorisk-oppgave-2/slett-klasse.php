@@ -29,6 +29,7 @@
         if (!$klassekode) {
             echo "Ingen klassekode er valgt.<br>";
         } else {
+            include("db-tilkobling.php");
             $sqlSetning = "SELECT * FROM student WHERE klassekode = '$klassekode'";
             $sqlResultat = mysqli_query($db, $sqlSetning)
                 or die("Ikke mulig å hente data fra databasen.<br>");
