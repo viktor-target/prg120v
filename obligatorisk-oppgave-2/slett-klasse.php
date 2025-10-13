@@ -9,10 +9,10 @@
 
 <body>
     <h1>Slett klasse</h1>
-    <script src="obligatorisk-oppgave-2/js-funksjoner.js"></script>
+    <script src="obligatorisk-oppgave-2\js-funksjoner.js"></script>
     <form method="post" id="slettKlasseSkjema" name="slettKlasseSkjema" onsubmit="return slettKlasseVarsel();">
         <select id="klassekode" name="klassekode">
-            <option value="">--Velg klasse som skal slettes</option>
+            <option value="">--Velg klasse som skal slettes--</option>
             <?php
             include("php-funksjoner");
             lagKlasseDropdown();
