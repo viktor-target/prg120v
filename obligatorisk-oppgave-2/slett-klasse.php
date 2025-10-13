@@ -36,7 +36,7 @@
             $antallRader = mysqli_num_rows($sqlResultat);
 
             if ($antallRader != 0) {
-                echo "Denne klassen har minst én student og kan ikke slettes.<br>";
+                echo "Denne klassen har minst én student i seg og kan ikke slettes.<br>";
             } else {
                 $sqlSetning = "SELECT * FROM klasse WHERE klassekode = '$klassekode'";
                 $sqlResultat = mysqli_query($db, $sqlSetning)
