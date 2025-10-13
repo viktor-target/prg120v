@@ -14,7 +14,7 @@
         <select id="klassekode" name="klassekode">
             <option value="">--Velg klasse som skal slettes--</option>
             <?php
-            include("php-funksjoner");
+            include("php-funksjoner.php");
             lagKlasseDropdown();
             ?>
         </select><br><br>
