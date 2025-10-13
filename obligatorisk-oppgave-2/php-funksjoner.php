@@ -30,4 +30,20 @@ function lagKlassekodeDropdown()
     }
 }
 
+function lagKlasseDropdown()
+{
+    include("db-tilkobling.php");
+    $sqlSetning = "SELECT * FROM klasse;";
+    $sqlResultat = mysqli_query($db, $sqlSetning)
+        or die("Ikke mulig å hente data fra databasen.<br>");
+    
+        while($rad = mysqli_fetch_array($sqlResultat)){
+            $klassekode = $rad["klassekode"];
+            $klassenavn = $rad["klassenavn"];
+            $studiumkode = $rad["studiumkode"];
+
+            echo "<option value='$klassekode'>$klassekode | $klassenavn | $studiumkode</option>";
+        }
+}
+
 ?>

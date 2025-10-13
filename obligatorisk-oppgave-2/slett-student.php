@@ -11,7 +11,7 @@
     <h1>Slett student</h1>
     <script src="obligatorisk-oppgave-2\js-funksjoner.js"></script>
     <form method="post" id="slettStudentSkjema" name="slettStudentSkjema" onSubmit="return slettStudentVarsel();">
-        <select name="brukernavn" id="brukernavn">
+        <select id="brukernavn" name="brukernavn">
             <option value="">--Velg student som skal slettes--</option>
             <?php
             include("php-funksjoner.php");
@@ -19,8 +19,9 @@
             ?>
         </select><br><br>
         <input type="submit" value="Slett student" id="slettStudentKnapp" name="slettStudentKnapp">
-        <input type="reset" value="Nullstill" name="nullstillKnapp" id="nullstillKnapp">
+        <input type="reset" value="Nullstill" id="nullstillKnapp" name="nullstillKnapp">
     </form><br>
+
     <?php
     if (isset($_POST["slettStudentKnapp"])) {
         $brukernavn = $_POST["brukernavn"];
@@ -33,13 +34,14 @@
             $sqlResultat = mysqli_query($db, $sqlSetning)
                 or die("Ikke mulig å hente data fra databasen.<br>");
             $rad = mysqli_fetch_array($sqlResultat);
-            $fornavn = $rad["fornavn"]; /* FIKS ERROR NÅR MAN IKKE VELGER BRUKERNAVN I LISTEBOKSEN */
+            $fornavn = $rad["fornavn"];
             $etternavn = $rad["etternavn"];
+
             $sqlSetning = "DELETE FROM student WHERE brukernavn = '$brukernavn';";
             mysqli_query($db, $sqlSetning)
                 or die("Ikke mulig å slette data i databasen.<br>");
 
-            echo "Følgende student har blitt slettet: $fornavn $etternavn.";
+            echo "Følgende student har blitt slettet: $fornavn $etternavn.<br>";
         }
     }
     ?>
