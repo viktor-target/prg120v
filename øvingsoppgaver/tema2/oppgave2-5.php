@@ -64,7 +64,6 @@
                 $resultat = $tall1 / $tall2;
                 echo "Resultatet av regneoperasjonen ($tall1 / $tall2) er $resultat.<br>";
             }
-
         }
     }
     ?>
