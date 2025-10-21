@@ -33,7 +33,7 @@
         } else if ($giftSvar == "n" && $barnSvar == "n") {
             echo "Du er ikke gift og du har ikke barn.<br>";
         } else {
-            echo "Du har svar noe annet enn enn j (ja) eller n (nei).<br>";
+            echo "Du har svart noe annet enn enn j (ja) eller n (nei).<br>";
         }
     }
     ?>
