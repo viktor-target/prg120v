@@ -32,7 +32,11 @@
         $tall2 = $_POST["tall2"];
         $regneoperasjon = $_POST["regneoperasjon"];
 
-        if ($regneoperasjon == 1) {
+        if (!$tall1 || !$tall2) {
+            echo "Tall 1 og/eller 2 er ikke fyllt ut.<br>";
+        } else if ($regneoperasjon < 1 || $regneoperasjon > 4) {
+            echo "Ugyldig regneoperasjon. Må være mellom 1-4.<br>";
+        } else if ($regneoperasjon == 1) {
             echo "Det første tallet er $tall1.<br>";
             echo "Det andre tallet er $tall2.<br>";
             echo "Regneoperasjonen er addisjon.<br><br>";
