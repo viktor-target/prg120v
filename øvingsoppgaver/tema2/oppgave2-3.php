@@ -19,13 +19,13 @@
     if (isset($_POST["svarKnapp"])) {
         $svar = strtolower($_POST["svar"]);
         if (!$svar) {
-            echo "Du har ikke svart.";            
+            echo "Du har ikke svart.<br>";            
         } else if ($svar == "j" || $svar == "ja") {
-            echo "Du har svart ja på spørsmålet om du er student.";
+            echo "Du har svart ja på spørsmålet om du er student.<br>";
         } else if ($svar == "n" || $svar == "nei") {
-            echo "Du har svart nei på spørsmålet om du er student.";
+            echo "Du har svart nei på spørsmålet om du er student.<br>";
         } else {
-            echo "Du har svart noe annet enn ja/j eller nei/n.";
+            echo "Du har svart noe annet enn ja/j eller nei/n.<br>";
         }
     }
     ?>
