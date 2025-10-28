@@ -17,7 +17,7 @@
         <label for="tall2">Tall 2 </label>
         <input type="text" id="tall2" name="tall2"><br><br>
         <input type="submit" value="Fortsett" id="svarKnapp" name="svarKnapp">
-    </form>
+    </form><br>
 
     <?php
     if (isset($_POST["svarKnapp"])) {
