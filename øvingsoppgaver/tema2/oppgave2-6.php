@@ -16,8 +16,8 @@
 
         <label for="tall2">Tall 2 </label>
         <input type="text" id="tall2" name="tall2"><br><br>
-        <input type="submit" value="Fortsett" id="svarKnapp" name="svarKnapp">
-    </form><br><br>
+        <input type="submit" value="Fortsett" id="svarKnapp" name="svarKnapp"><br><br>
+    </form>
 
     <?php
     if (isset($_POST["svarKnapp"])) {
@@ -33,8 +33,10 @@
                 echo "$tall1 er mindre enn $tall2.<br>";
             } else if ($tall1 > $tall2) {
                 echo "$tall1 er større enn $tall2.<br>";
-            } else {
+            } else if ($tall1 == $tall2) {
                 echo "$tall1 er lik $tall2.<br>";
+            } else {
+                echo "Usikkert resultat.";
             }
         }
     }
