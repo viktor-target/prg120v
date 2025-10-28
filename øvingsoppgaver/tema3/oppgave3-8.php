@@ -9,7 +9,7 @@
 
 <body>
     <h1>Vis tall i motsatte rekkefølger</h1>
-    <h2>Skriv inn 5 tall</h2>
+    <h2>Skriv inn 5 tall.</h2>
     <form method="post" id="tallSkjema" name="tallSkjema">
         <?php
         $antallTall = 5;
@@ -18,7 +18,7 @@
             <label for='tall$indeks'>Tall $indeks </label>
             <input type='number' id='tall$indeks' name='tall[]'><br>";
         }
-        ?>
+        ?><br>
         <input type="submit" value="Fortsett" id="svarKnapp" name="svarKnapp">
     </form>
 
@@ -29,8 +29,9 @@
         for ($i = 0; $i < $alleTall; $i++) {
             echo "$tall[$i] ";
         }
+        echo "<br>";
         for ($i = $alleTall - 1; $i >= 0; $i--) {
-            echo "$tall[$i]";
+            echo "$tall[$i] ";
         }
     }
     ?>
