@@ -21,6 +21,19 @@
         ?>
         <input type="submit" value="Fortsett" id="svarKnapp" name="svarKnapp">
     </form>
+
+    <?php
+    if (isset($_POST["svarKnapp"])) {
+        $tall = $_POST["tall"];
+        $alleTall = count($tall);
+        for ($i = 0; $i < $alleTall; $i++) {
+            echo "$tall[$i] ";
+        }
+        for ($i = $alleTall - 1; $i >= 0; $i--) {
+            echo "$tall[$i]";
+        }
+    }
+    ?>
 </body>
 
 </html>
