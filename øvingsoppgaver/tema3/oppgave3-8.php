@@ -20,7 +20,7 @@
         }
         ?><br>
         <input type="submit" value="Fortsett" id="svarKnapp" name="svarKnapp">
-    </form>
+    </form><br>
 
     <?php
     if (isset($_POST["svarKnapp"])) {
