@@ -12,10 +12,10 @@
     <h2>Skriv inn to tall som skal sammenliknes.</h2>
     <form method="post" id="ulikhetSkjema" name="ulikhetSkjema">
         <label for="tall1">Tall 1 </label>
-        <input type="text" id="tall1" name="tall1"><br>
+        <input type="number" id="tall1" name="tall1"><br>
 
         <label for="tall2">Tall 2 </label>
-        <input type="text" id="tall2" name="tall2"><br><br>
+        <input type="number" id="tall2" name="tall2"><br><br>
         <input type="submit" value="Fortsett" id="svarKnapp" name="svarKnapp">
     </form><br>
 
