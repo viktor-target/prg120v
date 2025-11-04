@@ -10,8 +10,10 @@
 <body>
     <h1>Matematikk 3</h1>
     <h2>Velg tall og regneoperasjon.</h2>
-    <h3>Regneoperasjon må være et tall fra 1-4.<br>
-        (1 = addisjon | 2 = subtraksjon | 3 = multiplikasjon | 4 = divisjon)</h3>
+    <h3>
+        Regneoperasjon må være et tall fra 1-4.<br>
+        (1 = addisjon | 2 = subtraksjon | 3 = multiplikasjon | 4 = divisjon)
+    </h3>
     <form method="post" id="matteSkjema" name="matteSkjema">
         <div id="skjemaDiv" name="skjemaDiv">
             <label for="tall1">Tall 1 </label>
@@ -34,6 +36,8 @@
 
         if (!$tall1 || !$tall2) {
             echo "Tall 1 og/eller 2 er ikke fyllt ut.<br>";
+        } else if (!ctype_digit($tall1) || !ctype_digit($tall2) || !ctype_digit($regneoperasjon)) {
+            echo "Du har skrevet noe annet enn tall.<br>";
         } else if ($regneoperasjon < 1 || $regneoperasjon > 4) {
             echo "Ugyldig regneoperasjon. Må være mellom 1-4.<br>";
         } else if ($regneoperasjon == 1) {
