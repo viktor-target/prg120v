@@ -34,27 +34,29 @@
         $tall2 = $_POST["tall2"];
         $regneoperasjon = $_POST["regneoperasjon"];
 
-        if (!$tall1 || !$tall2) {
-            echo "Tall 1 og/eller 2 er ikke fyllt ut.<br>";
-        } else if (!ctype_digit($tall1) || !ctype_digit($tall2) || !ctype_digit($regneoperasjon)) {
+        if (!$tall1 || !$tall2 || !$regneoperasjon) {
+            echo "Tall 1, Tall 2 eller Regneoperasjon er ikke fyllt ut.<br>";
+        } else if (
+            !ctype_digit($tall1) ||
+            !ctype_digit($tall2) ||
+            !ctype_digit($regneoperasjon)
+        ) {
             echo "Du har skrevet noe annet enn tall.<br>";
         } else if ($regneoperasjon < 1 || $regneoperasjon > 4) {
             echo "Ugyldig regneoperasjon. Må være mellom 1-4.<br>";
-        } else if ($regneoperasjon == 1) {
-            echo "Det første tallet er $tall1.<br>";
-            echo "Det andre tallet er $tall2.<br>";
+        }
+        echo "Det første tallet er $tall1.<br>";
+        echo "Det andre tallet er $tall2.<br>";
+
+        if ($regneoperasjon == 1) {
             echo "Regneoperasjonen er addisjon.<br><br>";
             $resultat = $tall1 + $tall2;
             echo "Resultatet av regneoperasjonen ($tall1 + $tall2) er $resultat.<br>";
         } else if ($regneoperasjon == 2) {
-            echo "Det første tallet er $tall1.<br>";
-            echo "Det andre tallet er $tall2.<br>";
             echo "Regneoperasjonen er subtraksjon.<br><br>";
             $resultat = $tall1 - $tall2;
             echo "Resultatet av regneoperasjonen ($tall1 - $tall2) er $resultat.<br>";
         } else if ($regneoperasjon == 3) {
-            echo "Det første tallet er $tall1.<br>";
-            echo "Det andre tallet er $tall2.<br>";
             echo "Regneoperasjonen er multiplikasjon.<br><br>";
             $resultat = $tall1 * $tall2;
             echo "Resultatet av regneoperasjonen ($tall1 * $tall2) er $resultat.<br>";
@@ -62,8 +64,6 @@
             if ($tall2 == 0) {
                 echo "Kan ikke dele på 0.<br>";
             } else {
-                echo "Det første tallet er $tall1.<br>";
-                echo "Det andre tallet er $tall2.<br>";
                 echo "Regneoperasjonen er divisjon.<br><br>";
                 $resultat = $tall1 / $tall2;
                 echo "Resultatet av regneoperasjonen ($tall1 / $tall2) er $resultat.<br>";
