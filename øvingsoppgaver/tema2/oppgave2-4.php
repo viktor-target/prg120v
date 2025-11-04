@@ -9,8 +9,8 @@
 
 <body>
     <h1>Svar med j (ja) eller n (nei).</h1>
-    <h2>Er du gift?</h2>
     <form method="post" id="giftOgBarn" name="giftOgBarn">
+        <h2>Er du gift?</h2>
         <input type="text" id="giftSvar" name="giftSvar"><br><br>
         <h2>Har du barn?</h2>
         <input type="text" id="barnSvar" name="barnSvar"><br><br>
@@ -24,6 +24,8 @@
 
         if (!$giftSvar || !$barnSvar) {
             echo "Du har ikke svart på begge spørsmålene.";
+        } else if (!ctype_alpha($giftSvar) || !ctype_alpha($barnSvar)) {
+            echo "Du har skrevet noe annet enn tekst.<br>";
         } else if ($giftSvar == "j" && $barnSvar == "j") {
             echo "Du er gift og har barn.<br>";
         } else if ($giftSvar == "j" && $barnSvar == "n") {
