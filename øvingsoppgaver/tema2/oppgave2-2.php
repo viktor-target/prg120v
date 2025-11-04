@@ -19,7 +19,9 @@
     if (isset($_POST["svarKnapp"])) {
         $svar = $_POST["svar"];
         if (!$svar) {
-            echo "Du har ikke svart.<br>";            
+            echo "Du har ikke svart.<br>";
+        } else if (!ctype_alpha($svar)) {
+            echo "Du har skrevet noe annet enn tekst.<br> ";
         } else if ($svar == "j") {
             echo "Du har svart ja på spørsmålet om du er student.<br>";
         } else if ($svar == "n") {
