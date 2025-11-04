@@ -18,10 +18,10 @@
     <?php
     if (isset($_POST["svarKnapp"])) {
         $svar = strtolower($_POST["svar"]);
-        if (!ctype_alpha($svar)) {
-            echo "Du har skrevet noe annet enn tekst.<br>";
-        } else if (!$svar) {
+        if (!$svar) {
             echo "Du har ikke svart.<br>";
+        } else if (!ctype_alpha($svar)) {
+            echo "Du har skrevet noe annet enn tekst.<br>";
         } else if ($svar == "j" || $svar == "ja") {
             echo "Du har svart ja på spørsmålet om du er student.<br>";
         } else if ($svar == "n" || $svar == "nei") {
