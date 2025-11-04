@@ -18,7 +18,9 @@
     <?php
     if (isset($_POST["svarKnapp"])) {
         $svar = $_POST["svar"];
-        if ($svar == 9) {
+        if (!$svar) {
+            echo "Du har ikke svart.";
+        } else if ($svar == 9) {
             echo "Riktig. 3 ganger 3 er 9.";
         } else {
             echo "Feil. 3 ganger 3 er ikke $svar. 3 ganger 3 er 9.";
