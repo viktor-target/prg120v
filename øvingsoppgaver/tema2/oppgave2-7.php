@@ -43,27 +43,21 @@
             Tall 2 er $tall2<br>
             Tall 3 er $tall3<br><br>";
 
-            if ($tall1 < $tall2) {
-                echo "$tall1 er mindre enn $tall2<br>";
-            } else if ($tall1 > $tall2) {
-                echo "$tall1 er større enn $tall2<br>";
-            } else {
-                echo "$tall1 er lik $tall2<br>";
+            sammenlignTall($tall1, $tall2);
+            sammenlignTall($tall2, $tall3);
+            sammenlignTall($tall3, $tall1);
+
+            function sammenlignTall($num1, $num2)
+            {
+                if ($num1 < $num2) {
+                    echo "$num1 er mindre enn $num2<br>";
+                } else if ($num1 > $num2) {
+                    echo "$num1 er større enn $num2<br>";
+                } else {
+                    echo "$num1 er lik $num2<br>";
+                }
             }
-            if ($tall2 < $tall3) {
-                echo "$tall2 er mindre enn $tall3<br>";
-            } else if ($tall2 > $tall3) {
-                echo "$tall2 er større enn $tall3<br>";
-            } else {
-                echo "$tall2 er lik $tall3<br>";
-            }
-            if ($tall3 < $tall1) {
-                echo "$tall3 er mindre enn $tall1<br>";
-            } else if ($tall3 > $tall1) {
-                echo "$tall3 er større enn $tall1<br>";
-            } else {
-                echo "$tall3 er lik $tall1<br>";
-            }
+
         }
     }
     ?>
