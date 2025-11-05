@@ -26,12 +26,15 @@
     if (isset($_POST["svarKnapp"])) {
         $tall = $_POST["tall"];
         for ($i = 0; $i < count($tall); $i++) {
+            $j = $i+1;
             if (!$tall[$i]) {
-                echo "Tall $i+1 er ikke fyllt ut.<br>";
+                echo "Tall $j er ikke fyllt ut.<br>";
+                break;
             } else if (!ctype_digit($tall[$i])) {
-                echo "Tall $i+1 ($tall[$i]) er ikke et tall.<br>";
+                echo "Tall $j ($tall[$i]) er ikke et tall.<br>";
+                break;
             } else {
-                echo "Tall $i+1 er $tall[1]<br>";
+                echo "Tall $j er $tall[$i]<br>";
             }
         }
         for ($i = 0; $i < count($tall); $i++) {
