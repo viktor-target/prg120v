@@ -11,21 +11,43 @@
     <h1>Matematisk ulikhet 2</h1>
     <h2>Skriv inn tre tall som skal sammenliknes.</h2>
     <form method="post">
-        <label for="tall1">Tall 1</label>
-        <input type="text" id="tall1" name="tall1"><br>
-
-        <label for="tall2">Tall 2</label>
-        <input type="text" id="tall2" name="tall2"><br>
-
-        <label for="tall1">Tall 3</label>
-        <input type="text" id="tall3" name="tall3"><br><br>
-
+        <?php
+        $antallTall = 3;
+        for ($i = 1; $i <= $antallTall; $i++) {
+            echo "
+            <label for='tall$i'>Tall $i</label>
+            <input type='text' id='tall$i' name='tall[]'><br>";
+        }
+        ?><br>
         <input type="submit" value="Fortsett" id="svarKnapp" name="svarKnapp">
     </form><br>
 
     <?php
     if (isset($_POST["svarKnapp"])) {
-        $tall1 = $_POST["tall1"];
+        $tall = $_POST["tall[]"];
+        for ($i = 0; $i < count($tall); $i++) {
+            if (!$tall[$i]) {
+                echo "Tall $i+1 er ikke fyllt ut.<br>";
+            } else if (!ctype_digit($tall[$i])) {
+                echo "Tall $i+1 ($tall[$i]) er ikke et tall.<br>";
+            } else {
+                echo "Tall $i+1 er $tall[1]<br>";
+            }
+        }
+        for ($i = 0; $i < count($tall); $i++) {
+            sammenlignTall($tall[$i], $tall[$i]);
+        }
+            function sammenlignTall($num1, $num2) {
+                if ($num1 < $num2) {
+                    echo "$num1 er mindre enn $num2<br>";
+                } else if ($num1 > $num2) {
+                    echo "$num1 er større enn $num2<br>";
+                } else {
+                    echo "$num1 er lik $num2<br>";
+                }
+            }
+
+        /* $tall1 = $_POST["tall1"];
         $tall2 = $_POST["tall2"];
         $tall3 = $_POST["tall3"];
 
@@ -47,18 +69,10 @@
             sammenlignTall($tall2, $tall3);
             sammenlignTall($tall3, $tall1);
 
-            function sammenlignTall($num1, $num2)
-            {
-                if ($num1 < $num2) {
-                    echo "$num1 er mindre enn $num2<br>";
-                } else if ($num1 > $num2) {
-                    echo "$num1 er større enn $num2<br>";
-                } else {
-                    echo "$num1 er lik $num2<br>";
-                }
+            
             }
 
-        }
+        } */
     }
     ?>
 </body>
