@@ -44,8 +44,10 @@
                 echo "Tall $j er $tall[$i]<br>";
             }
         }
-        for ($i = 0; $i < count($tall); $i++) {
-            sammenlignTall($tall[$i], $tall[$i]);
+        if ($gyldigeTall) {
+            for ($i = 0; $i < count($tall); $i++) {
+                sammenlignTall($tall[$i], $tall[$i]);
+            }
         }
     }
     function sammenlignTall($num1, $num2)
