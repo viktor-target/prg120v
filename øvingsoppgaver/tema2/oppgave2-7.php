@@ -46,18 +46,18 @@
                 echo "$tall1 er lik $tall2<br>";
             }
             if ($tall2 < $tall3) {
-                echo "$tall2 er mindre enn $tall3";
+                echo "$tall2 er mindre enn $tall3<br>";
             } else if ($tall2 > $tall3) {
-                echo "$tall2 er større enn $tall3";
+                echo "$tall2 er større enn $tall3<br>";
             } else {
-                echo "$tall2 er lik $tall3";
+                echo "$tall2 er lik $tall3<br>";
             }
             if ($tall3 < $tall1) {
-                echo "$tall3 er mindre enn $tall1";
+                echo "$tall3 er mindre enn $tall1<br>";
             } else if ($tall3 > $tall1) {
-                echo "$tall3 er større enn $tall1";
+                echo "$tall3 er større enn $tall1<br>";
             } else {
-                echo "$tall3 er lik $tall1";
+                echo "$tall3 er lik $tall1<br>";
             }
         }
     }
