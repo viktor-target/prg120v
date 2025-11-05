@@ -35,29 +35,25 @@
             echo "Du har skrevet noe annet enn tall.";
         } else {
             echo "
-        Tall 1 er $tall[0]<br>
-        Tall 2 er $tall[1]<br>
-        Tall 3 er $tall[2]<br><br>";
+                Tall 1 er $tall[0]<br>
+                Tall 2 er $tall[1]<br>
+                Tall 3 er $tall[2]<br><br>";
 
             sammenlignTall($tall[0], $tall[1]);
             sammenlignTall($tall[1], $tall[2]);
             sammenlignTall($tall[2], $tall[0]);
-
-            function sammenlignTall($num1, $num2)
-            {
-                if ($num1 < $num2) {
-                    echo "$num1 er mindre enn $num2<br>";
-                } else if ($num1 > $num2) {
-                    echo "$num1 er større enn $num2<br>";
-                } else {
-                    echo "$num1 er lik $num2<br>";
-                }
-            }
         }
-
     }
-
-
+    function sammenlignTall($num1, $num2)
+    {
+        if ($num1 < $num2) {
+            echo "$num1 er mindre enn $num2<br>";
+        } else if ($num1 > $num2) {
+            echo "$num1 er større enn $num2<br>";
+        } else {
+            echo "$num1 er lik $num2<br>";
+        }
+    }
     ?>
 </body>
 
