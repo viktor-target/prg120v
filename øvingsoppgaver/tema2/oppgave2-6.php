@@ -16,6 +16,7 @@
 
         <label for="tall2">Tall 2 </label>
         <input type="number" id="tall2" name="tall2"><br><br>
+        
         <input type="submit" value="Fortsett" id="svarKnapp" name="svarKnapp">
     </form><br>
 
