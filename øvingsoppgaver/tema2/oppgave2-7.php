@@ -10,7 +10,7 @@
 <body>
     <h1>Matematisk ulikhet 2</h1>
     <h2>Skriv inn tre tall som skal sammenliknes.</h2>
-    <form>
+    <form method="post">
         <label for="tall1">Tall 1</label>
         <input type="text" id="tall1" name="tall1"><br>
 
@@ -44,13 +44,15 @@
                 echo "$tall1 er større enn $tall2<br>";
             } else {
                 echo "$tall1 er lik $tall2<br>";
-            } if ($tall2 < $tall3) {
+            }
+            if ($tall2 < $tall3) {
                 echo "$tall2 er mindre enn $tall3";
             } else if ($tall2 > $tall3) {
                 echo "$tall2 er større enn $tall3";
             } else {
                 echo "$tall2 er lik $tall3";
-            } if ($tall3 < $tall1) {
+            }
+            if ($tall3 < $tall1) {
                 echo "$tall3 er mindre enn $tall1";
             } else if ($tall3 > $tall1) {
                 echo "$tall3 er større enn $tall1";
