@@ -25,69 +25,39 @@
     <?php
     if (isset($_POST["svarKnapp"])) {
         $tall = $_POST["tall"];
-        $gyldigeTall = true;
-        for ($i = 0; $i < count($tall); $i++) {
-            $j = $i + 1;
-            if (!$tall[$i]) {
-                $gyldigeTall = false;
-                echo "Tall $j er ikke fyllt ut.<br>";
-                if ($j == count($tall) && !$gyldigeTall) {
-                    break;
-                }
-            } else if (!ctype_digit($tall[$i])) {
-                $gyldigeTall = false;
-                echo "Tall $j ($tall[$i]) er ikke et tall.<br>";
-                if ($j == count($tall) && !$gyldigeTall) {
-                    break;
-                }
-            } else {
-                echo "Tall $j er $tall[$i]<br>";
-            }
-        }
-        if ($gyldigeTall) {
-            for ($i = 0; $i < count($tall); $i++) {
-                sammenlignTall($tall[$i], $tall[$i]);
-            }
-        }
-    }
-    function sammenlignTall($num1, $num2)
-    {
-        if ($num1 < $num2) {
-            echo "$num1 er mindre enn $num2<br>";
-        } else if ($num1 > $num2) {
-            echo "$num1 er større enn $num2<br>";
+        if (!$tall[0] || !$tall[1] || !$tall[2]) {
+            echo "Alle tallene er ikke fyllt ut.";
+        } else if (
+            !ctype_digit($tall[0]) ||
+            !ctype_digit($tall[1]) ||
+            !ctype_digit($tall[2])
+        ) {
+            echo "Du har skrevet noe annet enn tall.";
         } else {
-            echo "$num1 er lik $num2<br>";
+            echo "
+        Tall 1 er $tall[0]<br>
+        Tall 2 er $tall[1]<br>
+        Tall 3 er $tall[2]<br><br>";
+
+            sammenlignTall($tall[0], $tall[1]);
+            sammenlignTall($tall[1], $tall[2]);
+            sammenlignTall($tall[2], $tall[0]);
+
+            function sammenlignTall($num1, $num2)
+            {
+                if ($num1 < $num2) {
+                    echo "$num1 er mindre enn $num2<br>";
+                } else if ($num1 > $num2) {
+                    echo "$num1 er større enn $num2<br>";
+                } else {
+                    echo "$num1 er lik $num2<br>";
+                }
+            }
         }
+
     }
 
 
-    /* $tall1 = $_POST["tall1"];
-    $tall2 = $_POST["tall2"];
-    $tall3 = $_POST["tall3"];
-
-    if (!$tall1 || !$tall2 || !$tall3) {
-        echo "Alle tallene er ikke fyllt ut.";
-    } else if (
-        !ctype_digit($tall1) ||
-        !ctype_digit($tall2) ||
-        !ctype_digit($tall3)
-    ) {
-        echo "Du har skrevet noe annet enn tall.";
-    } else {
-        echo "
-        Tall 1 er $tall1<br>
-        Tall 2 er $tall2<br>
-        Tall 3 er $tall3<br><br>";
-
-        sammenlignTall($tall1, $tall2);
-        sammenlignTall($tall2, $tall3);
-        sammenlignTall($tall3, $tall1);
-
-
-        }
-
-    } */
     ?>
 </body>
 
