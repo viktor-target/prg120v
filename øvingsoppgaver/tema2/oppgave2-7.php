@@ -27,7 +27,7 @@
     if (isset($_POST["svarKnapp"])) {
         $tall1 = $_POST["tall1"];
         $tall2 = $_POST["tall2"];
-        $tall3 = $_POST["tall1"];
+        $tall3 = $_POST["tall3"];
 
         if (!$tall1 || !$tall2 || !$tall3) {
             echo "Alle tallene er ikke fyllt ut.";
