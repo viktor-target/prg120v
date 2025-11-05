@@ -21,7 +21,7 @@
         <input type="text" id="tall3" name="tall3"><br><br>
 
         <input type="submit" value="Fortsett" id="svarKnapp" name="svarKnapp">
-    </form>
+    </form><br>
 
     <?php
     if (isset($_POST["svarKnapp"])) {
@@ -42,7 +42,7 @@
             Tall 1 er $tall1<br>
             Tall 2 er $tall2<br>
             Tall 3 er $tall3<br><br>";
-            
+
             if ($tall1 < $tall2) {
                 echo "$tall1 er mindre enn $tall2<br>";
             } else if ($tall1 > $tall2) {
