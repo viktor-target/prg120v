@@ -19,7 +19,7 @@
         $sum += $i;
     }
 
-    echo "Summen av tallene fra $startTall til $sluttTall er $sum";
+    echo "Summen av tallene fra $startTall til $sluttTall er $sum.";
     ?>
 </body>
 
